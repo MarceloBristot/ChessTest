@@ -1,0 +1,47 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Chessboard using Pure CSS and HTML</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+    <link href="chessboard.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <!-- <script type="text/javascript" src="chatSettings.js"></script> -->
+</head>
+
+<body ng-app="myApp" ng-controller="myCtrl">
+    <div id="chessboard" class="chessboard">
+        <div ng-repeat="x in records">
+            <div ng-repeat="y in records">
+                <div ng-if="(x+y)%2 == 0" class="white">
+                    <div ng-repeat="peca in pecas track by $index">
+                        <div ng-if="peca.x == x && peca.y == y">
+                            <div ng-bind-html="peca.peca | unsafe"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div ng-if="(x+y)%2 != 0" class="black">
+                    <div ng-repeat="peca in pecas track by $index">
+                        <div ng-if="peca.x == x && peca.y == y">
+                            <div id="pecas" ng-bind-html="peca.peca | unsafe"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="historico_mensagens"></div>
+    <div id="lista_usuarios"></div>
+    <div id='sala_chat'>
+        <form id='chat'>
+            <input type='text' id='texto_mensagem' name='texto_mensagem' />
+            <input type='submit' value='Enviar mensagem!' />
+        </form>
+    </div>
+
+</body>
+<script type="text/javascript" src="chess.js"></script>
+
+</html>

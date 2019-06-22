@@ -1,0 +1,39 @@
+    .chessboard {
+        width: 480px;
+        height: 480px;
+        margin: 20px;
+        border: 25px solid #333;
+    }
+    .black {
+        float: left;
+        width: 60px;
+        height: 60px;
+        background-color: #999;
+          font-size:50px;
+        text-align:center;
+        display: table-cell;
+        vertical-align:middle;
+    }
+    .white {
+        float: left;
+        width: 60px;
+        height: 60px;
+        background-color: #fff;
+        font-size:50px;
+        text-align:center;
+        display: table-cell;
+        vertical-align:middle;
+    }
+
+    #historico_mensagens, #lista_usuarios{
+        background: #FFF;
+        border:2px solid #45C5BF;
+        height: 550px;
+        float:left;
+        margin-bottom: 10px;
+        width:75%;
+   }
+   #historico_mensagens{
+        border-right: 0;
+        overflow-y: scroll
+   }
